@@ -3,9 +3,9 @@
 class CalendarExporter {
   constructor() {
     this.eventData = {
-      title: 'Mustafa & Salma Wedding & Henna Night',
-      description: 'Together with their families, Mustafa & Salma invite you to celebrate their engagement & wedding.',
-      location: 'Al Yashmak Hall, Al Arish, North Sinai',
+      title: 'Mustafa & Salma Engagement Outing',
+      description: 'Together with their families, Mustafa & Salma invite you to celebrate their engagement outing.',
+      location: 'Gatz Lounge, New Cairo, Cairo Governorate',
       startDate: '20260815T200000',
       endDate: '20260815T230000'
     };

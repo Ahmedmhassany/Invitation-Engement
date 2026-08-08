@@ -8,9 +8,9 @@ class RSVPManager {
     
     // Initial notes referencing Mustafa & Salma with song recommendations
     this.initialWishes = [
-      { id: 1, name: 'Omar & Noor', text: 'Sending you endless love and happiness! Can’t wait for the engagement party 🎉', song: 'El Bakht - Wegz 🎵', time: '2 hours ago', likes: 14 },
-      { id: 2, name: 'Youssef Al-Sayed', text: 'Congratulations Mustafa and Salma! Wishing you a lifetime of joy ❤️', song: 'Amr Diab - Tamally Maak 🎶', time: '5 hours ago', likes: 9 },
-      { id: 3, name: 'Amina & Tarek', text: 'So excited to celebrate with you both! ✨', song: 'Cairokee - Ya El Mydan 🎵', time: '1 day ago', likes: 18 }
+      { id: 1, name: 'Omar & Noor', text: 'Sending you endless love and happiness! Can’t wait for the engagement party', song: 'El Bakht - Wegz', time: '2 hours ago', likes: 14 },
+      { id: 2, name: 'Youssef Al-Sayed', text: 'Congratulations Mustafa and Salma! Wishing you a lifetime of joy', song: 'Amr Diab - Tamally Maak', time: '5 hours ago', likes: 9 },
+      { id: 3, name: 'Amina & Tarek', text: 'So excited to celebrate with you both!', song: 'Cairokee - Ya El Mydan', time: '1 day ago', likes: 18 }
     ];
 
     this.init();
@@ -53,8 +53,8 @@ class RSVPManager {
     if (this.form) this.form.reset();
 
     const toastMsg = status === 'attending' 
-      ? `Thank you ${name}! Your attendance has been confirmed 🎉`
-      : `Thank you ${name} for letting us know! You will be missed ❤️`;
+      ? `Thank you ${name}! Your attendance has been confirmed`
+      : `Thank you ${name} for letting us know! You will be missed`;
     
     this.showToast(toastMsg);
   }
@@ -73,7 +73,7 @@ class RSVPManager {
       id: Date.now(),
       name: name,
       text: text || 'Congratulations to the happy couple!',
-      song: song ? `${song} 🎵` : '',
+      song: song ? `${song}` : '',
       time: 'Just now',
       likes: 1
     };
@@ -98,7 +98,7 @@ class RSVPManager {
         <p class="wish-text">"${this.escapeHtml(w.text)}"</p>
         ${w.song ? `<div class="wish-song-badge" style="font-family: var(--font-body); font-size: 0.82rem; color: var(--gold-accent); margin-top: 0.4rem; font-weight: 500;">Suggested Song: ${this.escapeHtml(w.song)}</div>` : ''}
         <button class="wish-heart-btn" onclick="window.rsvpManager.likeWish(${w.id})">
-          ❤️ <span>${w.likes}</span>
+          <svg class="heart-icon-svg" viewBox="0 0 24 24" fill="currentColor" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span>${w.likes}</span>
         </button>
       `;
       this.guestbookContainer.appendChild(card);

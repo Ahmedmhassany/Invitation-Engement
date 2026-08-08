@@ -138,119 +138,123 @@
   border: 0;
 }
 
-/* MOMENTS Carousel Slider */
+/* MOMENTS 3D Coverflow Slider */
 .carousel-wrapper {
   position: relative;
-  max-width: 700px;
   width: 100%;
+  max-width: 100%;
   margin: 2rem auto 0;
-  border: 1.5px solid rgba(187, 165, 0, 0.4);
-  border-radius: 8px;
   overflow: hidden;
-  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  background: var(--bg-cream);
+  padding: 2.5rem 0 1.5rem;
+  min-height: clamp(300px, 60vw, 420px);
+}
+
+#gallery.section-container {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .carousel-container {
-  overflow: hidden;
   position: relative;
-  aspect-ratio: 16/10;
+  width: 100%;
+  height: clamp(260px, 60vw, 400px);
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  margin: 0 auto;
 }
 
 .carousel-track {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  width: 100%;
   height: 100%;
+  transform-style: preserve-3d;
 }
 
 .carousel-slide {
-  min-width: 100%;
-  height: 100%;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(260px, 60vw, 400px);
+  height: clamp(260px, 60vw, 400px);
+  border-radius: 0;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: none;
+  background: transparent;
 }
 
 .carousel-slide img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  border-radius: 0;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
+/* Dim Overlay Disabled */
+.slide-dim-overlay {
+  display: none !important;
+}
+
+.carousel-slide.active .slide-dim-overlay {
+  opacity: 0;
+}
+
+/* Slide Caption overlay with theme styles */
 .carousel-caption-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 3vw, 2.8rem) clamp(1.2rem, 3vw, 2.2rem);
-  background: linear-gradient(to top, rgba(15, 23, 38, 0.88) 0%, rgba(15, 23, 38, 0.4) 60%, transparent 100%);
-  color: #FFFFFF;
+  padding: 1.5rem 1rem clamp(1.2rem, 3vw, 1.8rem);
+  background: linear-gradient(to top, rgba(28, 41, 67, 0.95) 0%, rgba(28, 41, 67, 0.7) 40%, rgba(28, 41, 67, 0) 100%);
+  color: var(--text-cream);
+  z-index: 2;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  opacity: 0;
   text-align: left;
+}
+
+.carousel-slide.active .carousel-caption-overlay {
+  opacity: 1;
 }
 
 .carousel-caption-script {
   font-family: var(--font-script);
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  color: #FFF5B3;
-  line-height: 1.1;
-  margin-bottom: 0.2rem;
+  font-size: 1.7rem;
+  color: var(--gold-accent);
+  margin-bottom: 0.1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
 }
 
 .carousel-caption-sub {
-  font-family: var(--font-heading);
-  font-size: clamp(0.68rem, 1.8vw, 0.88rem);
-  letter-spacing: 0.28em;
-  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
 }
 
-.carousel-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.8rem;
-  padding: 1.2rem 1rem;
-  background: var(--bg-cream);
-  border-top: 1px solid rgba(187, 165, 0, 0.2);
-}
 
-.carousel-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--emerald-dark);
-  border: 1px solid var(--gold-accent);
-  color: #FFF5B3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-}
-
-.carousel-btn:hover {
-  background: var(--emerald-deep);
-  transform: scale(1.1);
-}
-
-.carousel-dots {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.carousel-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--gold-light);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.carousel-dot.active {
-  width: 26px;
-  border-radius: 10px;
-  background: var(--gold-accent);
-}
 
 /* GOOD TO KNOW FAQ Accordion */
 .faq-list {

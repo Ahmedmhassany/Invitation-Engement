@@ -66,15 +66,8 @@ body {
   font-weight: 400;
 }
 
-/* Background Canvas for Particle Hearts & Sparkles */
 #bg-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 1;
+  display: none !important;
 }
 
 /* Shimmering Metallic Gold Foil Text Effect */
@@ -586,7 +579,7 @@ body {
 
 /* Footer Logo Signature Container */
 .footer-signature-container {
-  padding: clamp(3rem, 6vw, 4.5rem) 1.5rem clamp(3.5rem, 7vw, 5.5rem);
+  padding: clamp(1rem, 2vw, 1.5rem) 1.5rem clamp(1.2rem, 3vw, 1.8rem);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -598,7 +591,7 @@ body {
 }
 
 .footer-logo-img {
-  max-width: clamp(160px, 35vw, 240px);
+  max-width: clamp(160px, 40vw, 280px);
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -609,6 +602,31 @@ body {
 .footer-logo-img:hover {
   transform: scale(1.05);
   opacity: 1;
+}
+
+/* Navbar Header Styles */
+.main-navbar {
+  width: 100%;
+  background: var(--bg-cream);
+  border-bottom: 1px solid rgba(187, 165, 0, 0.15);
+  padding: 0.6rem clamp(1rem, 3vw, 1.8rem);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo {
+  height: clamp(45px, 8vw, 70px);
+  width: auto;
+  object-fit: contain;
 }
 
 /* Desktop Grid Breakpoints */

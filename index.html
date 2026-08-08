@@ -6,20 +6,18 @@
   <title>Mustafa &amp; Salma — Our Engagement Outing</title>
   
   <!-- SEO & Social Meta Tags -->
-  <meta name="description" content="You are cordially invited to celebrate Our Engagement Outing with Mustafa & Salma on May 2nd, 2026.">
+  <meta name="description" content="You are cordially invited to celebrate Our Engagement Outing with Mustafa & Salma on August 15th, 2026.">
   <meta property="og:title" content="Mustafa &amp; Salma — Engagement Outing">
   <meta property="og:description" content="Mustafa & Salma invite you to share in their joy at Our Engagement Outing.">
   <meta property="og:type" content="website">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css?v=1.1">
-  <link rel="stylesheet" href="css/envelope.css?v=1.1">
-  <link rel="stylesheet" href="css/components.css?v=1.1">
+  <link rel="stylesheet" href="css/main.css?v=1.4">
+  <link rel="stylesheet" href="css/envelope.css?v=1.4">
+  <link rel="stylesheet" href="css/components.css?v=1.9">
 </head>
 <body>
 
-  <!-- Floating Particle Canvas (Gold Sparkles & Soft Hearts) -->
-  <canvas id="bg-canvas"></canvas>
 
   <!-- COVER OVERLAY: Interactive Wax Seal Cover -->
   <div id="cover-overlay">
@@ -35,11 +33,7 @@
         <span class="seal-motif motif-bottom">✦</span>
         <span class="seal-motif motif-left">✦</span>
         
-        <div class="seal-monogram">
-          <span>M</span>
-          <span class="seal-ampersand">&amp;</span>
-          <span>S</span>
-        </div>
+        <img src="assets/logo.png?v=1.4" alt="Mustafa & Salma Logo" class="seal-logo">
       </div>
     </div>
 
@@ -50,6 +44,12 @@
 
   <!-- MAIN APPLICATION CONTAINER -->
   <div id="app">
+    <!-- Header Navbar -->
+    <header class="main-navbar">
+      <div class="navbar-container">
+        <img src="assets/logo.png?v=1.4" alt="Mustafa & Salma Logo" class="navbar-logo">
+      </div>
+    </header>
 
     <div class="main-content">
 
@@ -71,7 +71,7 @@
           </h1>
 
           <div class="event-date-text">
-            MAY 2ND, 2026
+            AUGUST 15TH, 2026
           </div>
         </div>
       </section>
@@ -82,7 +82,6 @@
           <div class="scroll-indicator">
             <div class="scroll-text">SCROLL</div>
             <div class="vertical-line"></div>
-            <div class="heart-icon-small">💖</div>
           </div>
 
           <h2 class="countdown-title">Counting the days to our forever</h2>
@@ -128,10 +127,8 @@
               <svg class="corner-ornament corner-top-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h8M4 4v8M4 4l6 6"/></svg>
               <svg class="corner-ornament corner-top-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h8M4 4v8M4 4l6 6"/></svg>
 
-              <div class="heart-icon-small" style="position: absolute; top: 1.2rem; right: 1.5rem;">💖</div>
               <h3 class="event-title">Engagement Celebration</h3>
-              
-              <div class="event-detail-item">May 2, 2026</div>
+              <div class="event-detail-item">August 15, 2026</div>
               <div class="event-detail-item">8:00 PM</div>
               <div class="event-detail-item" style="font-weight: 600; margin-top: 1rem; color: var(--emerald-dark);">Al Yashmak Hall</div>
               <div class="event-location">Al Arish, North Sinai</div>
@@ -180,37 +177,36 @@
             <div class="carousel-track">
               <!-- Slide 1 -->
               <div class="carousel-slide">
-                <img src="assets/photo2.jpg" alt="A Toast to Love and Joy">
-                <div class="carousel-caption-overlay">
-                  <div class="carousel-caption-script">A Toast</div>
-                  <div class="carousel-caption-sub">TO LOVE AND JOY</div>
-                </div>
+                <img src="assets/photo1.jpeg" alt="Moment 1">
               </div>
               <!-- Slide 2 -->
               <div class="carousel-slide">
-                <img src="assets/photo3.jpg" alt="Sweet Moments">
-                <div class="carousel-caption-overlay">
-                  <div class="carousel-caption-script">Sweet Moments</div>
-                  <div class="carousel-caption-sub">FOREVER BEGINS NOW</div>
-                </div>
+                <img src="assets/photo2.jpeg" alt="Moment 2">
               </div>
               <!-- Slide 3 -->
               <div class="carousel-slide">
-                <img src="assets/photo1.jpg" alt="Hand in Hand">
-                <div class="carousel-caption-overlay">
-                  <div class="carousel-caption-script">Hand in Hand</div>
-                  <div class="carousel-caption-sub">OUR JOURNEY TOGETHER</div>
-                </div>
+                <img src="assets/photo3.jpeg" alt="Moment 3">
+              </div>
+              <!-- Slide 4 -->
+              <div class="carousel-slide">
+                <img src="assets/photo4.jpeg" alt="Moment 4">
+              </div>
+              <!-- Slide 5 -->
+              <div class="carousel-slide">
+                <img src="assets/photo5.jpeg" alt="Moment 5">
+              </div>
+              <!-- Slide 6 -->
+              <div class="carousel-slide">
+                <img src="assets/photo6.jpeg" alt="Moment 6">
+              </div>
+              <!-- Slide 7 -->
+              <div class="carousel-slide">
+                <img src="assets/photo7.jpeg" alt="Moment 7">
               </div>
             </div>
           </div>
 
-          <!-- Carousel Controls -->
-          <div class="carousel-navigation">
-            <button class="carousel-btn" id="carousel-prev" title="Previous Slide">←</button>
-            <div class="carousel-dots" id="carousel-dots"></div>
-            <button class="carousel-btn" id="carousel-next" title="Next Slide">→</button>
-          </div>
+          <!-- Carousel Controls Removed (Swipe Navigation Active) -->
         </div>
       </section>
 
@@ -227,7 +223,7 @@
           <div class="faq-item">
             <div class="faq-header">
               <div class="faq-question">
-                Is parking available at the venue? <span class="heart-icon-small" style="margin:0;">💖</span>
+                Is parking available at the venue?
               </div>
               <span class="faq-icon">+</span>
             </div>
@@ -275,7 +271,7 @@
           <div class="faq-item">
             <div class="faq-header">
               <div class="faq-question">
-                Will food &amp; drinks be served? <span class="heart-icon-red">❤️</span>
+                Will food &amp; drinks be served?
               </div>
               <span class="faq-icon">+</span>
             </div>
@@ -299,7 +295,7 @@
           <div class="rsvp-inner-card">
             <h3 class="section-heading" style="font-size: 1.4rem;">CONFIRM YOUR ATTENDANCE</h3>
             <p style="font-family: var(--font-body); font-style: italic; color: var(--text-muted); margin-bottom: 0.5rem;">
-              Please respond by April 1st, 2026
+              Please respond by July 15th, 2026
             </p>
 
             <div class="gold-divider" style="margin: 0.8rem 0 1.5rem;">
@@ -319,11 +315,11 @@
                 <div class="radio-group">
                   <label class="radio-label">
                     <input type="radio" name="attendance" value="attending" checked>
-                    Joyfully Accept / جاي أكيد 🎉
+                    Joyfully Accept / جاي أكيد
                   </label>
                   <label class="radio-label">
                     <input type="radio" name="attendance" value="declining">
-                    Regretfully Decline / مش هقدر أكون موجود <span class="heart-icon-red">❤️</span>
+                    Regretfully Decline / مش هقدر أكون موجود
                   </label>
                 </div>
               </div>
@@ -339,7 +335,7 @@
 
               <!-- SONG SUGGESTION FIELD -->
               <div class="form-group">
-                <label class="form-label" for="rsvp-song">SUGGEST A SONG FOR OUR PLAYLIST 🎵</label>
+                <label class="form-label" for="rsvp-song">SUGGEST A SONG FOR OUR PLAYLIST</label>
                 <input type="text" id="rsvp-song" class="form-input" placeholder="Title &amp; Artist / اقترح أغنية تحب تسمعها...">
               </div>
 
@@ -379,7 +375,7 @@
 
       <!-- FOOTER BRAND LOGO SIGNATURE -->
       <footer class="footer-signature-container">
-        <img src="assets/message-footer.png" alt="Mustafa &amp; Salma Logo Signature" class="footer-logo-img">
+        <img src="assets/message-footer.png?v=1.4" alt="Mustafa &amp; Salma Logo Signature" class="footer-logo-img">
       </footer>
 
     </div><!-- /.main-content -->
@@ -400,16 +396,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <!-- Application Scripts -->
-  <script src="js/sparkles.js?v=1.1"></script>
-  <script src="js/audio.js?v=1.1"></script>
-  <script src="js/envelope.js?v=1.1"></script>
-  <script src="js/countdown.js?v=1.1"></script>
-  <script src="js/calendar.js?v=1.1"></script>
-  <script src="js/rsvp.js?v=1.1"></script>
-  <script src="js/gallery.js?v=1.1"></script>
-  <script src="js/scroll-animations.js?v=1.1"></script>
-  <script src="js/app.js?v=1.1"></script>
+
+  <script src="js/audio.js?v=1.4"></script>
+  <script src="js/envelope.js?v=1.4"></script>
+  <script src="js/countdown.js?v=1.4"></script>
+  <script src="js/calendar.js?v=1.4"></script>
+  <script src="js/rsvp.js?v=1.4"></script>
+  <script src="js/gallery.js?v=1.8"></script>
+  <script src="js/scroll-animations.js?v=1.4"></script>
+  <script src="js/app.js?v=1.4"></script>
 
 </body>
 </html>

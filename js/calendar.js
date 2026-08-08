@@ -6,8 +6,8 @@ class CalendarExporter {
       title: 'Mustafa & Salma Wedding & Henna Night',
       description: 'Together with their families, Mustafa & Salma invite you to celebrate their engagement & wedding.',
       location: 'Al Yashmak Hall, Al Arish, North Sinai',
-      startDate: '20260502T200000',
-      endDate: '20260502T230000'
+      startDate: '20260815T200000',
+      endDate: '20260815T230000'
     };
     this.init();
   }
@@ -44,7 +44,7 @@ class CalendarExporter {
     document.body.removeChild(link);
 
     if (window.rsvpManager) {
-      window.rsvpManager.showToast('Event added to Calendar! 📅');
+      window.rsvpManager.showToast('Event added to Calendar!');
     }
   }
 }

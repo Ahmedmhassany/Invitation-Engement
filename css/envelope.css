@@ -51,8 +51,8 @@
 /* Dark Green Monogram Wax Seal */
 .wax-seal {
   position: relative;
-  width: clamp(140px, 44vw, 200px);
-  height: clamp(140px, 44vw, 200px);
+  width: clamp(170px, 52vw, 230px);
+  height: clamp(170px, 52vw, 230px);
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #2E3D5C 0%, #1C2943 65%, #0F1726 100%);
   display: flex;
@@ -98,25 +98,18 @@
 .motif-left { left: 14px; transform: rotate(-90deg); }
 .motif-right { right: 14px; transform: rotate(90deg); }
 
-/* Monogram Text inside Wax Seal */
-.seal-monogram {
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 3.8vw, 1.75rem);
-  color: #FFF5B3;
-  letter-spacing: 0.12em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1;
+/* Monogram Logo inside Wax Seal */
+.seal-logo {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
   z-index: 2;
-  font-weight: 700;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: brightness(0) invert(1) sepia(0.15) saturate(1.8) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
-.seal-monogram .seal-ampersand {
-  font-family: var(--font-script);
-  font-size: clamp(1.3rem, 4vw, 1.9rem);
-  margin: 2px 0;
-  color: var(--gold-light);
+.wax-seal:hover .seal-logo {
+  transform: scale(1.05) rotate(-2deg);
 }
 
 /* Bottom Tap to Open Prompt */

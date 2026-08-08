@@ -1,4 +1,4 @@
-/* Real-Time Event Countdown Timer (Target: May 2nd, 2026 20:00:00) */
+/* Real-Time Event Countdown Timer (Target: August 15th, 2026 20:00:00) */
 
 class CountdownTimer {
   constructor(targetDateStr) {
@@ -39,5 +39,5 @@ class CountdownTimer {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new CountdownTimer('2026-05-02T20:00:00');
+  new CountdownTimer('2026-08-15T20:00:00');
 });

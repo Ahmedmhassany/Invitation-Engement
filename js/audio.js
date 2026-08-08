@@ -21,8 +21,8 @@ class SoundSystem {
   }
 
   initAudioElement() {
-    // Royalty-free acoustic wedding song stream/synthesized ambient music
-    this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=acoustic-wedding-love-story-112876.mp3');
+    // Fairouz - Adesh Kan Fi Nas Instrumental by Joe Youhanna
+    this.bgAudio = new Audio(encodeURI('assets/Adesh Kan Fi Nas (Fairouz) Instrumental by Joe Youhanna.mp3.mpeg'));
     this.bgAudio.loop = true;
     this.bgAudio.volume = 0.4;
   }

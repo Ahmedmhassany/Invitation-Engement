@@ -7,7 +7,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(18, 40, 31, 0.7);
+  background: rgba(15, 23, 38, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
@@ -91,14 +91,14 @@
   left: 4px;
   right: 4px;
   bottom: 4px;
-  border: 1px solid rgba(197, 160, 89, 0.25);
+  border: 1px solid rgba(187, 165, 0, 0.25);
   border-radius: 4px;
   pointer-events: none;
 }
 
 .calendar-card-btn:hover {
   background: var(--emerald-dark);
-  color: #FBF5B7;
+  color: #FFF5B3;
   border-color: var(--emerald-dark);
   transform: translateY(-3px);
 }
@@ -144,7 +144,7 @@
   max-width: 700px;
   width: 100%;
   margin: 2rem auto 0;
-  border: 1.5px solid rgba(197, 160, 89, 0.4);
+  border: 1.5px solid rgba(187, 165, 0, 0.4);
   border-radius: 8px;
   overflow: hidden;
   background: var(--bg-card);
@@ -180,7 +180,7 @@
   left: 0;
   right: 0;
   padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 3vw, 2.8rem) clamp(1.2rem, 3vw, 2.2rem);
-  background: linear-gradient(to top, rgba(18, 40, 31, 0.88) 0%, rgba(18, 40, 31, 0.4) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(15, 23, 38, 0.88) 0%, rgba(15, 23, 38, 0.4) 60%, transparent 100%);
   color: #FFFFFF;
   text-align: left;
 }
@@ -188,7 +188,7 @@
 .carousel-caption-script {
   font-family: var(--font-script);
   font-size: clamp(2.4rem, 6vw, 4rem);
-  color: #FBF5B7;
+  color: #FFF5B3;
   line-height: 1.1;
   margin-bottom: 0.2rem;
 }
@@ -208,7 +208,7 @@
   gap: 1.8rem;
   padding: 1.2rem 1rem;
   background: var(--bg-cream);
-  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  border-top: 1px solid rgba(187, 165, 0, 0.2);
 }
 
 .carousel-btn {
@@ -217,7 +217,7 @@
   border-radius: 50%;
   background: var(--emerald-dark);
   border: 1px solid var(--gold-accent);
-  color: #FBF5B7;
+  color: #FFF5B3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,11 +264,12 @@
 }
 
 .faq-item {
-  background: var(--bg-paper);
-  border: 1px solid rgba(197, 160, 89, 0.3);
-  border-radius: 6px;
-  padding: 0.6rem 1.4rem;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(187, 165, 0, 0.4);
+  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
   transition: all 0.3s ease;
+  opacity: 1;
 }
 
 .faq-item:hover {
@@ -288,7 +289,7 @@
   font-family: var(--font-heading);
   font-style: normal;
   font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-  color: var(--emerald-dark);
+  color: var(--emerald-dark) !important;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -314,7 +315,7 @@
   opacity: 0;
   font-family: var(--font-body);
   font-size: clamp(0.92rem, 2.2vw, 1.05rem);
-  color: var(--text-dark);
+  color: var(--text-dark) !important;
   line-height: 1.65;
   padding-bottom: 0.6rem;
   font-weight: 400;
@@ -336,7 +337,7 @@
 
 .rsvp-inner-card {
   background: var(--bg-paper);
-  border: 1px solid rgba(197, 160, 89, 0.3);
+  border: 1px solid rgba(187, 165, 0, 0.3);
   border-radius: 6px;
   padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem);
   text-align: center;
@@ -368,7 +369,7 @@
   font-size: clamp(0.95rem, 2.2vw, 1.05rem);
   color: var(--text-dark);
   background: #FFFFFF;
-  border: 1px solid rgba(197, 160, 89, 0.4);
+  border: 1px solid rgba(187, 165, 0, 0.4);
   border-radius: 4px;
   outline: none;
   transition: border-color 0.3s ease;
@@ -416,7 +417,7 @@
   width: 100%;
   padding: 1rem 1.8rem;
   background: var(--emerald-dark);
-  color: #FBF5B7;
+  color: #FFF5B3;
   font-family: var(--font-heading);
   font-size: clamp(0.72rem, 2vw, 0.82rem);
   letter-spacing: 0.25em;
@@ -463,7 +464,7 @@
 
 .wish-card {
   background: var(--bg-paper);
-  border: 1px solid rgba(197, 160, 89, 0.3);
+  border: 1px solid rgba(187, 165, 0, 0.3);
   border-left: 3.5px solid var(--gold-accent);
   border-radius: 6px;
   padding: 1.2rem 1.4rem;
@@ -537,7 +538,7 @@
 
 .toast {
   background: var(--emerald-dark);
-  color: #FBF5B7;
+  color: #FFF5B3;
   border: 1.5px solid var(--gold-accent);
   padding: 0.9rem 1.6rem;
   border-radius: 30px;

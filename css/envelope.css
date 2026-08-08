@@ -6,7 +6,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle at center, #FAF6F0 0%, #F5EFE6 100%);
+  background: radial-gradient(circle at center, #FFFDF0 0%, #FAF6E8 100%);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -54,14 +54,14 @@
   width: clamp(140px, 44vw, 200px);
   height: clamp(140px, 44vw, 200px);
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #254B3D 0%, #162E25 65%, #0B1913 100%);
+  background: radial-gradient(circle at 35% 35%, #2E3D5C 0%, #1C2943 65%, #0F1726 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1.5px solid rgba(212, 175, 55, 0.5);
+  border: 1.5px solid rgba(187, 165, 0, 0.5);
   user-select: none;
 }
 
@@ -81,7 +81,7 @@
   right: 9px;
   bottom: 9px;
   border-radius: 50%;
-  border: 1.5px dashed rgba(212, 175, 55, 0.6);
+  border: 1.5px dashed rgba(187, 165, 0, 0.6);
   pointer-events: none;
 }
 
@@ -102,7 +102,7 @@
 .seal-monogram {
   font-family: var(--font-heading);
   font-size: clamp(1.2rem, 3.8vw, 1.75rem);
-  color: #FBF5B7;
+  color: #FFF5B3;
   letter-spacing: 0.12em;
   display: flex;
   flex-direction: column;
@@ -116,7 +116,7 @@
   font-family: var(--font-script);
   font-size: clamp(1.3rem, 4vw, 1.9rem);
   margin: 2px 0;
-  color: #E8D5B5;
+  color: var(--gold-light);
 }
 
 /* Bottom Tap to Open Prompt */

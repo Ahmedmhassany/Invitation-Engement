@@ -1,7 +1,8 @@
-/* Main Application Coordinator, Carousel & FAQ Accordion */
+/* Main Application Coordinator, Swipeable Moments Carousel & FAQ Accordion */
 
 class MomentsCarousel {
   constructor() {
+    this.wrapper = document.getElementById('carousel-wrapper');
     this.track = document.querySelector('.carousel-track');
     this.slides = document.querySelectorAll('.carousel-slide');
     this.prevBtn = document.getElementById('carousel-prev');
@@ -11,6 +12,11 @@ class MomentsCarousel {
     this.currentIndex = 0;
     this.totalSlides = this.slides ? this.slides.length : 0;
     
+    // Touch Swipe Variables
+    this.touchStartX = 0;
+    this.touchEndX = 0;
+    this.minSwipeDistance = 40;
+
     if (this.track && this.totalSlides > 0) {
       this.init();
     }
@@ -19,7 +25,13 @@ class MomentsCarousel {
   init() {
     this.createDots();
     this.update();
+    this.bindEvents();
 
+    // Auto slide every 5 seconds
+    setInterval(() => this.next(), 5000);
+  }
+
+  bindEvents() {
     if (this.prevBtn) {
       this.prevBtn.addEventListener('click', () => this.prev());
     }
@@ -28,8 +40,44 @@ class MomentsCarousel {
       this.nextBtn.addEventListener('click', () => this.next());
     }
 
-    // Auto slide every 5 seconds
-    setInterval(() => this.next(), 5000);
+    // Touch Swipe Handlers for Mobile & Desktop
+    if (this.wrapper) {
+      this.wrapper.addEventListener('touchstart', (e) => {
+        this.touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      this.wrapper.addEventListener('touchend', (e) => {
+        this.touchEndX = e.changedTouches[0].screenX;
+        this.handleSwipe();
+      }, { passive: true });
+
+      // Mouse drag simulation for desktop
+      let isDragging = false;
+      this.wrapper.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        this.touchStartX = e.clientX;
+      });
+
+      this.wrapper.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        this.touchEndX = e.clientX;
+        this.handleSwipe();
+      });
+    }
+  }
+
+  handleSwipe() {
+    const swipeDistance = this.touchEndX - this.touchStartX;
+    if (Math.abs(swipeDistance) > this.minSwipeDistance) {
+      if (swipeDistance < 0) {
+        // Swiped Left -> Next
+        this.next();
+      } else {
+        // Swiped Right -> Prev
+        this.prev();
+      }
+    }
   }
 
   createDots() {
@@ -103,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize Carousel & Accordion
+  // Initialize Swipeable Carousel & FAQ Accordion
   new MomentsCarousel();
   new FAQAccordion();
 });

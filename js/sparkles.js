@@ -37,7 +37,7 @@ class SparkleCanvas {
       opacity: Math.random() * 0.7 + 0.2,
       pulseSpeed: Math.random() * 0.02 + 0.005,
       isHeart: Math.random() > 0.7,
-      color: Math.random() > 0.5 ? '#D4AF37' : '#F8A5A5'
+      color: Math.random() > 0.5 ? '#BBA500' : '#F8A5A5'
     };
   }
 
@@ -75,9 +75,9 @@ class SparkleCanvas {
       } else {
         this.ctx.beginPath();
         this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        this.ctx.fillStyle = `rgba(212, 175, 55, ${Math.max(0.1, Math.min(0.7, p.opacity))})`;
+        this.ctx.fillStyle = `rgba(187, 165, 0, ${Math.max(0.1, Math.min(0.7, p.opacity))})`;
         this.ctx.shadowBlur = 8;
-        this.ctx.shadowColor = '#D4AF37';
+        this.ctx.shadowColor = '#BBA500';
         this.ctx.fill();
       }
     });

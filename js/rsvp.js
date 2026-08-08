@@ -110,24 +110,38 @@ class RSVPManager {
   }
 
   async loadWishes() {
+    const stored = localStorage.getItem('ms_guestbook_wishes_v2');
+    let localWishes = stored ? JSON.parse(stored) : [];
+    let sheetWishes = [];
+
     if (this.googleSheetUrl) {
       try {
         const response = await fetch(this.googleSheetUrl);
-        if (response.ok) {
+        const contentType = response.headers.get('content-type') || '';
+        if (response.ok && contentType.includes('json')) {
           const data = await response.json();
-          if (Array.isArray(data) && data.length > 0) {
-            this.renderWishes(data);
-            return;
+          if (Array.isArray(data)) {
+            sheetWishes = data;
           }
         }
       } catch (e) {
-        console.log('Fetching live wishes from Google Sheet, falling back to local:', e);
+        console.log('Google Sheet doGet notice:', e);
       }
     }
 
-    const stored = localStorage.getItem('ms_guestbook_wishes_v2');
-    const wishes = stored ? JSON.parse(stored) : [];
-    this.renderWishes(wishes);
+    // Merge local wishes and sheet wishes, avoiding exact duplicates
+    const combinedMap = new Map();
+    [...localWishes, ...sheetWishes].forEach(w => {
+      if (w && w.name) {
+        const key = `${w.name.trim().toLowerCase()}_${(w.text || '').trim().toLowerCase()}_${(w.song || '').trim().toLowerCase()}`;
+        if (!combinedMap.has(key)) {
+          combinedMap.set(key, w);
+        }
+      }
+    });
+
+    const finalWishes = Array.from(combinedMap.values());
+    this.renderWishes(finalWishes);
   }
 
   addWish(name, text, song) {
@@ -172,9 +186,6 @@ class RSVPManager {
         </div>
         ${wishText ? `<p class="wish-text">${wishText}</p>` : ''}
         ${w.song ? `<div class="wish-song-badge" style="font-family: var(--font-body); font-size: 0.82rem; color: var(--gold-accent); margin-top: 0.4rem; font-weight: 500;">Suggested Song: ${this.escapeHtml(w.song)}</div>` : ''}
-        <button class="wish-heart-btn" onclick="window.rsvpManager.likeWish(${w.id})">
-          <svg class="heart-icon-svg" viewBox="0 0 24 24" fill="currentColor" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> <span>${w.likes || 1}</span>
-        </button>
       `;
       this.guestbookContainer.appendChild(card);
     });

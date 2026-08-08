@@ -28,16 +28,7 @@ class SoundSystem {
   }
 
   playSealChime() {
-    this.initContext();
-    if (!this.audioCtx) return;
-
-    // Elegant harp chord synthesizer (C Major / E G C E notes)
-    const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51];
-    notes.forEach((freq, index) => {
-      setTimeout(() => {
-        this.playBellNote(freq, 1.2);
-      }, index * 90);
-    });
+    // Disabled entrance chime sound
   }
 
   playBellNote(freq, duration) {

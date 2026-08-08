@@ -68,15 +68,24 @@ class SoundSystem {
   }
 
   startMusicOnOpen() {
+    if (this.isPlayingMusic) return;
     this.initContext();
     const widget = document.getElementById('audio-widget');
     this.bgAudio.play().then(() => {
       this.isPlayingMusic = true;
       if (widget) widget.classList.add('audio-playing');
-    }).catch(() => {
-      // Audio autoplay policy fallback
+    }).catch((err) => {
+      console.log('Audio autoplay waiting for user interaction:', err);
     });
   }
 }
 
 window.soundSystem = new SoundSystem();
+
+// Auto-play music as soon as user interacts anywhere on page
+document.addEventListener('click', () => {
+  if (window.soundSystem && !window.soundSystem.isPlayingMusic) {
+    window.soundSystem.startMusicOnOpen();
+  }
+}, { once: true });
+

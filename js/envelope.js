@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (waxSeal && coverOverlay) {
     waxSeal.addEventListener('click', () => {
+      // Auto play background music on opening cover
+      if (window.soundSystem) {
+        window.soundSystem.startMusicOnOpen();
+      }
+
       // Add bursting animation class
       waxSeal.classList.add('bursting');
 

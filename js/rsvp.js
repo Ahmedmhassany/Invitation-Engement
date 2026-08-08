@@ -19,6 +19,9 @@ class RSVPManager {
   init() {
     this.loadWishes();
     this.bindEvents();
+
+    // Polling every 10 seconds for real-time live updates from Google Sheets
+    setInterval(() => this.loadWishes(), 10000);
   }
 
   bindEvents() {
@@ -164,6 +167,12 @@ class RSVPManager {
 
   renderWishes(wishes) {
     if (!this.guestbookContainer) return;
+
+    // Hash check to prevent unnecessary DOM re-renders during polling
+    const currentHash = JSON.stringify(wishes);
+    if (this.lastWishesHash === currentHash) return;
+    this.lastWishesHash = currentHash;
+
     this.guestbookContainer.innerHTML = '';
 
     if (!wishes || wishes.length === 0) {

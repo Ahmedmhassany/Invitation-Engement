@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustafa &amp; Salma — Wedding &amp; Engagement Invitation</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="You are cordially invited to celebrate the engagement and wedding of Mustafa & Salma on May 2nd, 2026.">
+  <meta property="og:title" content="Mustafa &amp; Salma — Wedding Invitation">
+  <meta property="og:description" content="Together with their families, Mustafa & Salma invite you to share in their joy.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/envelope.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Floating Particle Canvas (Gold Sparkles & Soft Hearts) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- COVER OVERLAY: Interactive Wax Seal Cover -->
+  <div id="cover-overlay">
+    <div class="cover-header-text">
+      YOU HAVE RECEIVED A WEDDING INVITATION
+    </div>
+
+    <div class="envelope-wrapper">
+      <div class="wax-seal" id="wax-seal" title="Tap to Open Invitation">
+        <div class="wax-seal-inner-ring"></div>
+        <span class="seal-motif motif-top">✦</span>
+        <span class="seal-motif motif-right">✦</span>
+        <span class="seal-motif motif-bottom">✦</span>
+        <span class="seal-motif motif-left">✦</span>
+        
+        <div class="seal-monogram">
+          <span>M</span>
+          <span class="seal-ampersand">&amp;</span>
+          <span>S</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-footer-text">
+      — tap to open —
+    </div>
+  </div>
+
+  <!-- MAIN APPLICATION CONTAINER -->
+  <div id="app">
+
+    <div class="main-content">
+
+      <!-- HERO SECTION -->
+      <section id="home" class="section-container">
+        <div class="luxury-card">
+          <!-- Filigree Corner Ornaments -->
+          <svg class="corner-ornament corner-top-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h8M4 4v8M4 4l6 6"/></svg>
+          <svg class="corner-ornament corner-top-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h8M4 4v8M4 4l6 6"/></svg>
+          <svg class="corner-ornament corner-bottom-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h8M4 4v8M4 4l6 6"/></svg>
+          <svg class="corner-ornament corner-bottom-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h8M4 4v8M4 4l6 6"/></svg>
+
+          <div class="heart-icon-small">💖</div>
+          <p class="subtitle-uppercase">TOGETHER WITH THEIR FAMILIES</p>
+          
+          <h1 class="names-display">
+            Mustafa
+            <span class="script-ampersand gold-shimmer-text">&amp;</span>
+            Salma
+          </h1>
+
+          <div class="event-date-text">
+            MAY 2ND, 2026 <span class="heart-icon-red">❤️</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- COUNTDOWN TICKER SECTION -->
+      <section id="countdown" class="countdown-section">
+        <div class="countdown-content-wrapper">
+          <div class="scroll-indicator">
+            <div class="scroll-text">SCROLL</div>
+            <div class="vertical-line"></div>
+            <div class="heart-icon-small">💖</div>
+          </div>
+
+          <h2 class="countdown-title">Counting the days to our forever</h2>
+
+          <div class="countdown-grid">
+            <div class="countdown-box">
+              <span class="countdown-num" id="cd-days">15</span>
+              <span class="countdown-label">DAYS</span>
+            </div>
+            <span class="countdown-separator">✦</span>
+            <div class="countdown-box">
+              <span class="countdown-num" id="cd-hours">23</span>
+              <span class="countdown-label">HOURS</span>
+            </div>
+            <span class="countdown-separator">✦</span>
+            <div class="countdown-box">
+              <span class="countdown-num" id="cd-minutes">18</span>
+              <span class="countdown-label">MINUTES</span>
+            </div>
+            <span class="countdown-separator">✦</span>
+            <div class="countdown-box">
+              <span class="countdown-num" id="cd-seconds">11</span>
+              <span class="countdown-label">SECONDS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE STORY TIMELINE SECTION -->
+      <section id="story" class="section-container">
+        <h2 class="section-heading">THE STORY</h2>
+        <div class="gold-divider">
+          <span class="diamond">✦</span>
+          <span class="line"></span>
+          <span class="diamond">✦</span>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <h3 class="timeline-title">First Meeting</h3>
+            <div class="timeline-date">SPRING 2021 <span class="heart-icon-small" style="margin:0;">💖</span></div>
+            <p class="timeline-desc">
+              Under the canopy of the old oak tree at the botanical garden, a chance encounter blossomed into a beautiful conversation.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <h3 class="timeline-title">The Engagement</h3>
+            <div class="timeline-date">SUMMER 2021 <span class="heart-icon-red">❤️</span></div>
+            <p class="timeline-desc">
+              Coffee turned into dinner, dinner turned into a moonlit walk. We knew from that day that this was something extraordinary.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <h3 class="timeline-title">Wedding Celebration</h3>
+            <div class="timeline-date">MAY 2026 ✨</div>
+            <p class="timeline-desc">
+              Hand in hand, surrounded by our beloved families and friends, we embark on our journey of eternal togetherness.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHEN & WHERE SECTION -->
+      <section id="details" class="section-container">
+        <h2 class="section-heading">WHEN &amp; WHERE</h2>
+        <div class="gold-divider">
+          <span class="diamond">✦</span>
+          <span class="line"></span>
+          <span class="diamond">✦</span>
+        </div>
+
+        <div class="desktop-2col-grid">
+          <!-- Left Column: Venue Card & Add to Calendar -->
+          <div>
+            <div class="event-card">
+              <!-- Filigree Corner Ornaments -->
+              <svg class="corner-ornament corner-top-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h8M4 4v8M4 4l6 6"/></svg>
+              <svg class="corner-ornament corner-top-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h8M4 4v8M4 4l6 6"/></svg>
+
+              <div class="heart-icon-small" style="position: absolute; top: 1.2rem; right: 1.5rem;">💖</div>
+              <h3 class="event-title">Henna Night &amp; Engagement</h3>
+              
+              <div class="event-detail-item">May 2, 2026</div>
+              <div class="event-detail-item">8:00 PM</div>
+              <div class="event-detail-item" style="font-weight: 600; margin-top: 1rem; color: var(--emerald-dark);">Al Yashmak Hall</div>
+              <div class="event-location">Al Arish, North Sinai</div>
+
+              <a href="https://maps.google.com/?q=Al+Yashmak+Hall+Al+Arish" target="_blank" rel="noopener noreferrer" class="btn-directions">
+                GET DIRECTIONS
+                <svg viewBox="0 0 24 24"><path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+
+            <button id="add-to-calendar-btn" class="calendar-card-btn">
+              <svg class="calendar-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <text x="12" y="18" font-size="7" font-weight="bold" text-anchor="middle" fill="currentColor">17</text>
+              </svg>
+              ADD TO CALENDAR
+            </button>
+          </div>
+
+          <!-- Right Column: Embedded Interactive Map -->
+          <div class="map-card-wrapper">
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13657.807895287413!2d33.8055!3d31.1319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f98108a901bb25%3A0xb3bd6157e8fa1fa2!2sAl%20Arish%2C%20North%20Sinai%20Governorate!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOMENTS CAROUSEL SECTION -->
+      <section id="gallery" class="section-container">
+        <h2 class="section-heading">MOMENTS</h2>
+        <div class="gold-divider">
+          <span class="diamond">✦</span>
+          <span class="line"></span>
+          <span class="diamond">✦</span>
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <!-- Slide 1 -->
+              <div class="carousel-slide">
+                <img src="assets/photo2.jpg" alt="A Toast to Love and Joy">
+                <div class="carousel-caption-overlay">
+                  <div class="carousel-caption-script">A Toast</div>
+                  <div class="carousel-caption-sub">TO LOVE AND JOY</div>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <img src="assets/photo3.jpg" alt="Sweet Moments">
+                <div class="carousel-caption-overlay">
+                  <div class="carousel-caption-script">Sweet Moments</div>
+                  <div class="carousel-caption-sub">FOREVER BEGINS NOW</div>
+                </div>
+              </div>
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <img src="assets/photo1.jpg" alt="Hand in Hand">
+                <div class="carousel-caption-overlay">
+                  <div class="carousel-caption-script">Hand in Hand</div>
+                  <div class="carousel-caption-sub">OUR JOURNEY TOGETHER</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="carousel-navigation">
+            <button class="carousel-btn" id="carousel-prev" title="Previous Slide">←</button>
+            <div class="carousel-dots" id="carousel-dots"></div>
+            <button class="carousel-btn" id="carousel-next" title="Next Slide">→</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- GOOD TO KNOW FAQ ACCORDION SECTION -->
+      <section id="faq" class="section-container">
+        <h2 class="section-heading">GOOD TO KNOW</h2>
+        <div class="gold-divider">
+          <span class="diamond">✦</span>
+          <span class="line"></span>
+          <span class="diamond">✦</span>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-header">
+              <div class="faq-question">
+                Is parking available at the venue? <span class="heart-icon-small" style="margin:0;">💖</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes! Complimentary valet parking and secure guest parking are available on-site at Al Yashmak Hall.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <div class="faq-question">
+                Are children welcome?
+              </div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              We love your little ones! Children are warmly welcome to join and celebrate with us.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <div class="faq-question">
+                What is the dress code?
+              </div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Black Tie / Formal Elegance. We invite you to wear your finest evening attire to match the luxury evening.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <div class="faq-question">
+                Can I take photos during the ceremony?
+              </div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Absolutely! Feel free to capture special moments and share them using our hashtag #MustafaAndSalma.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <div class="faq-question">
+                Will there be dietary options? <span class="heart-icon-red">❤️</span>
+              </div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes, a variety of gourmet dining options including vegetarian and special dietary choices will be served.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INLINE RSVP & CONGRATULATIONS WALL -->
+      <section id="rsvp" class="section-container">
+        <h2 class="section-heading">RSVP &amp; WISHES</h2>
+        <div class="gold-divider">
+          <span class="diamond">✦</span>
+          <span class="line"></span>
+          <span class="diamond">✦</span>
+        </div>
+
+        <div class="desktop-2col-grid">
+          <!-- Left Column: Inline RSVP Card -->
+          <div class="rsvp-card-wrapper">
+            <div class="rsvp-inner-card">
+              <h3 class="section-heading" style="font-size: 1.4rem;">RSVP</h3>
+              <p style="font-family: var(--font-body); font-style: italic; color: var(--text-muted); margin-bottom: 0.5rem;">
+                Please respond by April 1st, 2026
+              </p>
+
+              <div class="gold-divider" style="margin: 0.8rem 0 1.5rem;">
+                <span class="diamond">✦</span>
+                <span class="line"></span>
+                <span class="diamond">✦</span>
+              </div>
+
+              <form id="inline-rsvp-form" onsubmit="event.preventDefault(); window.rsvpManager.handleSubmission();">
+                <div class="form-group">
+                  <label class="form-label" for="rsvp-name">GUEST NAME(S)</label>
+                  <input type="text" id="rsvp-name" class="form-input" placeholder="Mr. &amp; Mrs. ..." required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">WILL YOU ATTEND?</label>
+                  <div class="radio-group">
+                    <label class="radio-label">
+                      <input type="radio" name="attendance" value="attending" checked>
+                      Joyfully Accept
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="attendance" value="declining">
+                      Regretfully Decline <span class="heart-icon-red">❤️</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="rsvp-guests">NUMBER OF GUESTS</label>
+                  <select id="rsvp-guests" class="form-select">
+                    <option value="1">Just me (1)</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3+">Family (3+)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="rsvp-message">WARM WISHES FOR MUSTAFA &amp; SALMA</label>
+                  <textarea id="rsvp-message" class="form-textarea" placeholder="Write a blessing or note for the couple..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                  CONFIRM RSVP &amp; SEND WISH
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column: Congratulations Wall -->
+          <div style="width: 100%;">
+            <div class="luxury-card" style="padding: 2.2rem 1.8rem; height: 100%;">
+              <h3 class="section-heading" style="font-size: 1.2rem; margin-bottom: 0.2rem;">CONGRATULATIONS WALL</h3>
+              <p style="font-family: var(--font-body); font-style: italic; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.2rem;">
+                Messages from beloved guests
+              </p>
+              <div class="guestbook-list" id="guestbook-list">
+                <!-- Filled dynamically by rsvp.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.main-content -->
+
+    <!-- FLOATING AUDIO EQUALIZER BUTTON -->
+    <div class="floating-audio-widget" id="audio-widget" title="Toggle Ambient Music">
+      <div class="equalizer-bars">
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+      </div>
+    </div>
+
+  </div><!-- /#app -->
+
+  <!-- GSAP & ScrollTrigger Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="js/sparkles.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/scroll-animations.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

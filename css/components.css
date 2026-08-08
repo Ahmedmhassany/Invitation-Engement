@@ -1,0 +1,554 @@
+/* Additional Component Styles: Modals, RSVP, Gallery, Moments Carousel, FAQ, Map & Toasts (Fonts: Headline = The Seasons, Body = Satoshi) */
+
+/* Modal Overlays */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 40, 31, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--bg-paper);
+  border: 1.5px solid var(--gold-accent);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.4rem, 4vw, 2.4rem);
+  position: relative;
+  transform: translateY(25px) scale(0.95);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-height: 88vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  color: var(--emerald-dark);
+  transform: rotate(90deg);
+}
+
+/* Add to Calendar Button Card */
+.calendar-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background: var(--bg-paper);
+  border: 1.5px solid var(--gold-accent);
+  border-radius: 6px;
+  padding: 1.1rem 1.8rem;
+  margin: 1.5rem auto 0;
+  width: 100%;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: clamp(0.72rem, 2vw, 0.85rem);
+  letter-spacing: 0.25em;
+  color: var(--emerald-dark);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 600;
+}
+
+.calendar-card-btn::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.calendar-card-btn:hover {
+  background: var(--emerald-dark);
+  color: #FBF5B7;
+  border-color: var(--emerald-dark);
+  transform: translateY(-3px);
+}
+
+.calendar-icon-svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Embedded Map Container */
+.map-card-wrapper {
+  background: var(--bg-paper);
+  border: var(--border-gold);
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 0;
+}
+
+/* MOMENTS Carousel Slider */
+.carousel-wrapper {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: 2rem auto 0;
+  border: 1.5px solid rgba(197, 160, 89, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16/10;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  height: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 3vw, 2.8rem) clamp(1.2rem, 3vw, 2.2rem);
+  background: linear-gradient(to top, rgba(18, 40, 31, 0.88) 0%, rgba(18, 40, 31, 0.4) 60%, transparent 100%);
+  color: #FFFFFF;
+  text-align: left;
+}
+
+.carousel-caption-script {
+  font-family: var(--font-script);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  color: #FBF5B7;
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
+}
+
+.carousel-caption-sub {
+  font-family: var(--font-heading);
+  font-size: clamp(0.68rem, 1.8vw, 0.88rem);
+  letter-spacing: 0.28em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.carousel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  padding: 1.2rem 1rem;
+  background: var(--bg-cream);
+  border-top: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--emerald-dark);
+  border: 1px solid var(--gold-accent);
+  color: #FBF5B7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--emerald-deep);
+  transform: scale(1.1);
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  width: 26px;
+  border-radius: 10px;
+  background: var(--gold-accent);
+}
+
+/* GOOD TO KNOW FAQ Accordion */
+.faq-list {
+  max-width: 780px;
+  width: 100%;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.faq-item {
+  background: var(--bg-paper);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 6px;
+  padding: 0.6rem 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--gold-accent);
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.8rem 0;
+  user-select: none;
+}
+
+.faq-question {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  color: var(--emerald-dark);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  color: var(--gold-accent);
+  transition: transform 0.3s ease;
+  font-weight: bold;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  color: var(--emerald-dark);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
+  color: var(--text-dark);
+  line-height: 1.65;
+  padding-bottom: 0.6rem;
+  font-weight: 400;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 160px;
+  opacity: 1;
+}
+
+/* INLINE RSVP CARD SECTION */
+.rsvp-card-wrapper {
+  background: var(--emerald-dark);
+  border: 2px solid var(--gold-accent);
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+}
+
+.rsvp-inner-card {
+  background: var(--bg-paper);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 6px;
+  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.8vw, 0.78rem);
+  letter-spacing: 0.2em;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  color: var(--text-dark);
+  background: #FFFFFF;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-weight: 400;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--emerald-dark);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 95px;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  color: var(--text-dark);
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: var(--emerald-dark);
+  width: 18px;
+  height: 18px;
+}
+
+/* Submit Button */
+.btn-primary {
+  width: 100%;
+  padding: 1rem 1.8rem;
+  background: var(--emerald-dark);
+  color: #FBF5B7;
+  font-family: var(--font-heading);
+  font-size: clamp(0.72rem, 2vw, 0.82rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-accent);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--emerald-deep);
+  transform: translateY(-2px);
+}
+
+/* Lightbox Modal */
+.lightbox-img-wrapper {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid var(--gold-accent);
+}
+
+.lightbox-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Guestbook Section */
+.guestbook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 540px;
+  overflow-y: auto;
+  padding-right: 0.4rem;
+  width: 100%;
+}
+
+.wish-card {
+  background: var(--bg-paper);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-left: 3.5px solid var(--gold-accent);
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.wish-card:hover {
+  transform: translateX(3px);
+}
+
+.wish-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.wish-author {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  color: var(--emerald-dark);
+}
+
+.wish-time {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+.wish-text {
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 2vw, 1.02rem);
+  color: var(--text-dark);
+  line-height: 1.55;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.wish-heart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--heart-pink);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.wish-heart-btn:hover {
+  transform: scale(1.18);
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  background: var(--emerald-dark);
+  color: #FBF5B7;
+  border: 1.5px solid var(--gold-accent);
+  padding: 0.9rem 1.6rem;
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}

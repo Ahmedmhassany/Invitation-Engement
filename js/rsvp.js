@@ -31,6 +31,9 @@ class RSVPManager {
   }
 
   async handleSubmission() {
+    if (this.isSubmitting) return;
+    this.isSubmitting = true;
+
     const nameInput = document.getElementById('rsvp-name');
     const statusInput = document.querySelector('input[name="attendance"]:checked');
     const guestsInput = document.getElementById('rsvp-guests');
@@ -40,6 +43,7 @@ class RSVPManager {
 
     if (!nameInput || !nameInput.value.trim()) {
       this.showToast('Please enter your full name');
+      this.isSubmitting = false;
       return;
     }
 
@@ -101,6 +105,8 @@ class RSVPManager {
 
     // Re-sync wishes from sheet after 1.5 seconds
     setTimeout(() => this.loadWishes(), 1500);
+
+    this.isSubmitting = false;
   }
 
   async loadWishes() {
